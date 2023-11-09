@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace BitStorm.Data
+namespace BitStorm.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {
