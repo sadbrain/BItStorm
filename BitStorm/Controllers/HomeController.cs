@@ -1,3 +1,4 @@
+using DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using System.Diagnostics;
@@ -7,12 +8,17 @@ namespace BitStorm.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    //private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    private readonly IUnitOfWork _unitOfWork;
+    public HomeController(IUnitOfWork unitOfWork)
     {
-        _logger = logger;
+        _unitOfWork = unitOfWork;
     }
+    //public HomeController(IUnitOfWork unitOfWork)
+    //{
+    //    _logger = logger;
+    //}
 
     public IActionResult Index()
     {
