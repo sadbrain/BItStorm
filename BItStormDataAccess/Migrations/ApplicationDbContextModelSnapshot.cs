@@ -19,7 +19,21 @@ namespace DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "6.0.0-preview.7.21378.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
 
             modelBuilder.Entity("Models.CategoryPostCast", b =>
                 {
@@ -192,9 +206,23 @@ namespace DataAccess.Migrations
                     b.ToTable("PostCasts");
                 });
 
-    
+            modelBuilder.Entity("Models.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Models.Expert", b =>
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -225,10 +253,46 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("Experts");
+                    b.ToTable("Users");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("User");
                 });
+
+            modelBuilder.Entity("Models.Expert", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                b.Property<string>("Discriminator")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Email")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Name")
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .HasColumnType("nvarchar(30)");
+
+                b.Property<string>("Password")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<int>("RoleId")
+                    .HasColumnType("int");
+
+                b.HasKey("Id");
+
+                b.HasIndex("RoleId");
+
+                b.ToTable("Experts");
+
+                b.HasDiscriminator<string>("Discriminator").HasValue("Expert");
+            });
 
             modelBuilder.Entity("Models.UserPreference", b =>
                 {
@@ -252,6 +316,38 @@ namespace DataAccess.Migrations
                     b.ToTable("UserPreferences");
                 });
 
+            modelBuilder.Entity("Models.Video", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Videos");
+                });
 
             modelBuilder.Entity("Models.Expert", b =>
                 {
@@ -358,16 +454,17 @@ namespace DataAccess.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Models.Expert", b =>
-            {
-                b.HasOne("Models.Role", "Role")
-                    .WithMany()
-                    .HasForeignKey("RoleId")
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .IsRequired();
+            modelBuilder.Entity("Models.User", b =>
+                {
+                    b.HasOne("Models.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                b.Navigation("Role");
-            });
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("Models.UserPreference", b =>
                 {
                     b.HasOne("Models.Category", "Category")
@@ -387,7 +484,16 @@ namespace DataAccess.Migrations
                     b.Navigation("User");
                 });
 
- 
+            modelBuilder.Entity("Models.Video", b =>
+                {
+                    b.HasOne("Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
 #pragma warning restore 612, 618
         }
     }

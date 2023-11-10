@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231110010841_addBitStormERDToDb")]
-    partial class addBitStormERDToDb
+    [Migration("20231110174021_add!2TabletoBitStormDb")]
+    partial class add2TabletoBitStormDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

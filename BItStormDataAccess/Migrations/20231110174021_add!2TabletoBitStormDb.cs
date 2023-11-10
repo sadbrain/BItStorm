@@ -3,33 +3,82 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccess.Migrations
 {
-    public partial class addBitStormERDToDb : Migration
+    public partial class add2TabletoBitStormDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
- 
             migrationBuilder.CreateTable(
-    name: "Experts",
-    columns: table => new
-    {
-        Id = table.Column<int>(type: "int", nullable: false)
-            .Annotation("SqlServer:Identity", "1, 1"),
-        Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-        Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-        Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-        RoleId = table.Column<int>(type: "int", nullable: false),
-        Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false)
-    },
-    constraints: table =>
-    {
-        table.PrimaryKey("PK_Experts", x => x.Id);
-        table.ForeignKey(
-            name: "FK_Experts_Roles_RoleId",
-            column: x => x.RoleId,
-            principalTable: "Roles",
-            principalColumn: "Id",
-            onDelete: ReferentialAction.Cascade);
-    });
+                name: "Categories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Roles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Roles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Users_Roles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "Roles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Experts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Experts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Experts_Roles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "Roles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateTable(
                 name: "MeetingRooms",
                 columns: table => new
@@ -130,7 +179,28 @@ namespace DataAccess.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-
+            migrationBuilder.CreateTable(
+                name: "Videos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Videos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Videos_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateTable(
                 name: "CategoryPostCasts",
@@ -270,8 +340,15 @@ namespace DataAccess.Migrations
                 table: "UserPreferences",
                 column: "UserId");
 
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_RoleId",
+                table: "Users",
+                column: "RoleId");
 
-  
+            migrationBuilder.CreateIndex(
+                name: "IX_Videos_UserId",
+                table: "Videos",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -295,7 +372,20 @@ namespace DataAccess.Migrations
                 name: "PostCasts");
 
             migrationBuilder.DropTable(
+                name: "Videos");
+
+            migrationBuilder.DropTable(
                 name: "Posts");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Users");
+            migrationBuilder.DropTable(
+                 name: "Experts");
+            migrationBuilder.DropTable(
+                name: "Roles");
         }
     }
 }
