@@ -23,6 +23,8 @@ public class Video
     
     [Required]
     public string Url { get; set; }
+    [Required]
+    public string Image_url { get; set; }
     public DateTime CreatedAt { get; set; }
 
 

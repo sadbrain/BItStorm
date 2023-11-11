@@ -12,6 +12,8 @@ public class Comment
     [Key]
     public int Id { get; set; }
     public DateTime CreateAt { get; set; }
+    public bool IsAnonymous { get; set; }
+
     [Required]
     public string Content { get; set; }
     [ForeignKey("User")]
@@ -20,4 +22,6 @@ public class Comment
     [ForeignKey("Post")]
     public int PostId { get; set; }
     public Post Post { get; set; }
+
+
 }

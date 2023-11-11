@@ -16,5 +16,6 @@ namespace BitStorm.Controllers
             List<Category> objCategories = _unitOfWork.Category.GetAll().ToList();
             return View(objCategories);
         }
+
     }
 }

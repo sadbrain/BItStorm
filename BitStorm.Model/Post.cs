@@ -17,7 +17,6 @@ public class Post
     public DateTime UpdatedAt { get; set; }
     public int LikeCount { get; set; }
     public int CommentCount { get; set; }
-    [Required]
 
     public bool IsAnonymous { get ; set; }
     [Required]
