@@ -16,18 +16,16 @@ body{
     margin-right:auto;
 }
 .container-fluid {
-    height: 90vh !important;
+    height: 95vh !important;
     margin-top: -30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background-image: url('https://img.freepik.com/free-photo/portrait-cute-korean-girl-reading-park-while-lying-grass-relaxing-with-favorite-book-han_1258-130450.jpg?w=996&t=st=1699695693~exp=1699696293~hmac=7b53d5cb1152d0465f7d50b6fbd32bfa8a2639224cec2a37c936738235f26457');
+    background-image: url('https://encuentra.com/wp-content/uploads/2023/03/Elogioalsilencio-encuentra.com_-2048x984.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-   
-    
     background-color: red;
     overflow-x: hidden;
 }
@@ -91,6 +89,10 @@ body{
     gap: 30px;
 }
 
+    .box_choice button.active {
+        background-color: blue;
+    }
+
 .item_style {
     /* background-color: aquamarine; */
     display: flex;
@@ -120,9 +122,10 @@ body{
     margin: 30px;
     margin-top: 100px;
     color: #3B71CA;
-    text-align:center;
     font-size: 30px;
     font-weight: bolder;
+    text-align: center;
+    padding-right : 100px;
 }
 .item_name, .item_sub_title {
     overflow: hidden;
@@ -132,15 +135,20 @@ body{
     -webkit-box-orient: vertical;
 }
 
-
-
 .card-body p:last-child {
     cursor: pointer;
     background-color: rgba(219, 219, 219, 0.444);
     display: inline;
     padding: 5px;
+    border-radius: 5px;
+    transition: all 1s ease; /* Thời gian chuyển màu và hàm easing */
 }
 
+    .card-body p:last-child:hover {
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        color: white !important;
+    }
 .podcast {
     background-color: white;
     display: flex;
