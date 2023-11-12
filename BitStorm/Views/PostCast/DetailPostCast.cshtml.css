@@ -2,13 +2,11 @@
     margin-bottom: 30px;
     border-radius: 8px;
 }
-
 .subsribe {
     margin-left: 50px;
     height: 40px;
     margin-top: 10px;
 }
-
 h4 {
     margin-top: 30px !important;
     margin-bottom: 30px;
@@ -18,33 +16,26 @@ h4 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .tỉme {
     margin-left: 10px;
 }
-
 .star {
     color: gold;
 }
-
 .like {
     color: blue;
 }
-
 .didlike {
     color: rgb(168, 45, 45);
 }
-
 .avatar_comment {
     width: 50px;
     object-fit: cover;
 }
-
 .card {
     /* background-color: red; */
     border: 1px solid rgba(174, 174, 174, 0.099) !important;
 }
-
 .name h2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -52,18 +43,10 @@ h4 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .view {
     font-weight: bold;
 }
 
-.video-container {
-    position: relative;
-}
-
-.video-container {
-    position: relative;
-}
 
 .play-button {
     position: absolute;
@@ -79,16 +62,16 @@ h4 {
     border-radius: 50%;
     outline: 20px solid rgba(144, 144, 231, 0.482);
 }
-
 .video-container {
     position: relative;
     display: inline-block;
+    position: relative;
+    width : 80vw;
+    left : -20px;
 }
-
 .play-button {
     outline: 2px solid rgba(255, 255, 255, 0.5) !important;
 }
-
 .play-button, .pause-icon {
     position: absolute;
     top: 50%;
@@ -99,28 +82,20 @@ h4 {
     cursor: pointer;
     transition: outline .3s ease-in-out;
 }
-
     .play-button:hover {
         outline: 30px solid rgba(255, 255, 255, 0.5) !important;
         background-color: rgb(0, 0, 253);
     }
-
-
 .pause-icon {
     display: none;
 }
-
 .sub_title span {
     color: #000;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 19px; /* 158.333% */
-  
     width : 75px;
-
-
-
 }
 .sub_title span:last-child {
     color: #000;
@@ -133,7 +108,6 @@ h4 {
 
 
 }
-
 #content_video {
     width: 23.5% !important;
     padding: 20px !important
@@ -142,7 +116,6 @@ h4 {
 h6 {
     font-size: 15px;
 }
-
 .container-fluid .card {
     /* background-color: rgb(163, 163, 163); */
     border: 0 solid !important;
@@ -150,26 +123,23 @@ h6 {
     transition: box-shadow 0.3s, transform 0.3s;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-
     .container-fluid .card:hover {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         transform: scale(1.04);
     }
-
 input {
     width: 70vw !important;
 }
-
 #comment-list {
     /* background-color: rgba(128, 128, 128, 0.208); */
     padding: 10px;
     border-radius: 8px;
 }
-
 .list_product {
     margin-top: 50px;
     width : 85vw !important;
-
     padding-bottom : 50px;
-
+}
+.offical{
+     padding-left : 30px;
 }

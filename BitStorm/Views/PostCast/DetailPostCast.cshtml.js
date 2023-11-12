@@ -2,7 +2,6 @@ var video = document.getElementById('video');
 var playButton = document.querySelector('.play-button');
 var pauseIcon = document.querySelector('.pause-icon');
 var timeoutId;
-console.log("11111111111111111111111")
 playButton.addEventListener('click', function () {
     if (video.paused) {
         video.play();
