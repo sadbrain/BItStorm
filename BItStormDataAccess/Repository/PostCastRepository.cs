@@ -17,11 +17,9 @@ public class PostCastRepository : Repository<PostCast>, IPostCastRepository
     {
         _db = db;
     }
-
-
-
     public void Update(PostCast obj)
     {
         _db.PostCasts.Update(obj);
     }
+
 }

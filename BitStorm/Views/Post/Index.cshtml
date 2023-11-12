@@ -18,4 +18,23 @@
     //hiển thị comment của bài post này;
     //call hầm GetComments ra từ CommentController
 } *@
+<script>
+    function GetParent(element, selector){
+        while(element.parentElement){
+            if(element.parentElement.matches(selector)){
+                return element.parentElement;
+            }
+            element = element.parentElement;
+        }
+    }
+    function ShowComment(event, idPost) {
+        const parent = GetParent(event.target, father);
+        const comment_container = parent.querySelector("");
+        $(comment_container).load('@Url.Action("GetComments", "Comment")');
+    }
+    funtion CreatePost(){
+        $(comment_container).load('@Url.Action("Create", "Post")');
+    }
+    
 
+</script>
