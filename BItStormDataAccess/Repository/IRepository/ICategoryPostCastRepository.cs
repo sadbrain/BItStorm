@@ -9,4 +9,6 @@ namespace DataAccess.Repository.IRepository;
 public interface ICategoryPostCastRepository : IRepository<CategoryPostCast>
 {
     void Update(CategoryPostCast obj);
+    IEnumerable<CategoryPostCast> GetAllByCategoryId(int categoryId);
+
 }
