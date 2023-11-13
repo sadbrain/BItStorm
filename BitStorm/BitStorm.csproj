@@ -29,4 +29,7 @@
 	  <ProjectReference Include="..\BitStorm.Model\Models.csproj" />
 	  <ProjectReference Include="..\BItStormDataAccess\DataAccess.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="wwwroot\Assert\" />
+	</ItemGroup>
 </Project>

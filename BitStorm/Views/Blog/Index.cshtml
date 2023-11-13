@@ -2,5 +2,290 @@
 @{
     ViewData["Title"] = "Index";
 }
-<h1>Blog Index</h1>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog</title>
+<link rel="stylesheet" href="style.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-myzF3TDLbN1aBtxw7X3LtcBxSbQkW9rY9Mj1fCz5iRD2dI+Xk0n+so1ZfCm7B8vU6v2TfGyJCBjQp5jJNzI8dA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-1Mge3xJzTfZPX0m3i2U1d6FieiyWu5p6ZiHjRbF5l3Y8lG5+9u8uEnD9fBbI2NzB9UeL4b5U6w6+xBGx8xjMLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<!-- phần 1 -->
+<div class="container-fluid" id="main">
+    <h1 class="main_title">
+        Bạn muốn xem gì hôm nay ?
+    </h1>
+    <div class="box_search">
+        
+        <button class="box_search_icon">
+            <i class="fa fa-search"></i>
+        </button>
+        <input type="text" placeholder="Tìm kiếm...">
+    </div>
+    <div class="box_choice d-flex">
+        <button class="btn btn-light box_choice_btn">
+            Podcast
+        </button>
+        <button class="btn btn-light box_choice_btn">
+            Nghe nhạc
+        </button>
+        <button class="btn btn-light box_choice_btn">
+            Những câu chuyện
+        </button>
+    </div>
+</div>
+<div class="content" id="content">
+
+    <h2 class="text-primary sub_title">Dành cho bạn</h2>
+    <div class="container" id="container1">
+        <div class="card content_video" id="content_video">
+            <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
+
+            <div class="card-body">
+                <div class="item_style">
+                    <h6>Life</h6>
+                    <h6>5 min read</h6>
+                </div>
+                <h3 class="card-title item_name">
+                    Cách chạy bộ để thoải mái tinh thần, nâng cao sức khỏe
+                </h3>
+                <p class="card-text item_sub_title">
+                    Tập thể dục là một trong những điều quan trọng nhất bạn có thể làm để chống lại căng thẳng.
+                </p>
+
+                <p class="text-primary">
+                    Xem thêm
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </p>
+
+            </div>
+        </div>
+        <div class="card content_video" id="content_video">
+            <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
+
+            <div class="card-body">
+                <div class="item_style">
+                    <h6>Life</h6>
+                    <h6>5 min read</h6>
+                </div>
+                <h3 class="card-title item_name">
+                    Cách chạy bộ để thoải mái tinh thần, nâng cao sức khỏe
+                </h3>
+                <p class="card-text item_sub_title">
+                    Tập thể dục là một trong những điều quan trọng nhất bạn có thể làm để chống lại căng thẳng.
+                </p>
+
+                <p class="text-primary">
+                    Xem thêm
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </p>
+
+            </div>
+        </div>
+        <div class="card content_video" id="content_video">
+            <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
+
+            <div class="card-body">
+                <div class="item_style">
+                    <h6>Life</h6>
+                    <h6>5 min read</h6>
+                </div>
+                <h3 class="card-title item_name">
+                    Cách chạy bộ để thoải mái tinh thần, nâng cao sức khỏe
+                </h3>
+                <p class="card-text item_sub_title">
+                    Tập thể dục là một trong những điều quan trọng nhất bạn có thể làm để chống lại căng thẳng.
+                </p>
+
+                <p class="text-primary">
+                    Xem thêm
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </p>
+
+            </div>
+        </div>
+        <div class="card content_video" id="content_video">
+            <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
+
+            <div class="card-body">
+                <div class="item_style">
+                    <h6>Life</h6>
+                    <h6>5 min read</h6>
+                </div>
+                <h3 class="card-title item_name">
+                    Cách chạy bộ để thoải mái tinh thần, nâng cao sức khỏe
+                </h3>
+                <p class="card-text item_sub_title">
+                    Tập thể dục là một trong những điều quan trọng nhất bạn có thể làm để chống lại căng thẳng.
+                </p>
+
+                <p class="text-primary">
+                    Xem thêm
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </p>
+
+            </div>
+        </div>
+        <div class="card content_video" id="content_video">
+            <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
+
+
+
+            <div class="card-body">
+                <div class="item_style">
+                    <h6>Life</h6>
+                    <h6>5 min read</h6>
+                </div>
+                <h3 class="card-title item_name">
+                    Cách chạy bộ để thoải mái tinh thần, nâng cao sức khỏe
+                </h3>
+                <p class="card-text item_sub_title">
+                    Tập thể dục là một trong những điều quan trọng nhất bạn có thể làm để chống lại căng thẳng.
+                </p>
+
+                <p class="text-primary">
+                    Xem thêm
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </p>
+
+            </div>
+        </div>
+        <div class="card content_video" id="content_video">
+            <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
+
+
+            <div class="card-body">
+                <div class="item_style">
+                    <h6>Life</h6>
+                    <h6>5 min read</h6>
+                </div>
+                <h3 class="card-title item_name">
+                    Cách chạy bộ để thoải mái tinh thần, nâng cao sức khỏe
+                </h3>
+                <p class="card-text item_sub_title">
+                    Tập thể dục là một trong những điều quan trọng nhất bạn có thể làm để chống lại căng thẳng.
+                </p>
+
+                <p class="text-primary">
+                    Xem thêm
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content2">
+    <div class="podcast">
+        <p class="p111">Giới Thiệu Cho Bạn</p>
+        <h6 style="text-align: center; padding-bottom: 10px;font-size: 30px;"><b>Một Vài Podcast Tâm Hồn</b></h6>
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-6 change">
+                            <div class="card mb-3 m-0" style="width: 18rem;">
+                                <img src="https://cdn.tuoitrethudo.com.vn/stores/news_dataimages/phamthanhtrung/112021/12/05/149ac61a42eeb5c23875c9e23e098829.png?rt=20211112052945" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">Chữa lành tâm hồn những người đang âu lo..</p>
+                                    <div class="d-flex">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <p style="font-size: 15px; color: gray;">1h30p</p>
+
+                                        <div style="margin-left: auto;color: #FF9933">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 change">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img src="https://cdn.tuoitrethudo.com.vn/stores/news_dataimages/phamthanhtrung/112021/12/05/149ac61a42eeb5c23875c9e23e098829.png?rt=20211112052945" alt="..." height="164px">
+                                <div class="card-body">
+                                    <p class="card-text">Hãy cảm ơn cuộc đời vì đã cho bạn sống....</p>
+                                    <div class="d-flex">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <p style="font-size: 15px; color: gray;">1h0p</p>
+
+                                        <div style="margin-left: auto;color: #FF9933">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-6 change">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img src="https://cdn.tuoitrethudo.com.vn/stores/news_dataimages/phamthanhtrung/112021/12/05/149ac61a42eeb5c23875c9e23e098829.png?rt=20211112052945" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">Chữa lành tâm hồn những người đang âu lo..</p>
+                                    <div class="d-flex">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <p style="font-size: 15px; color: gray;">1h30p</p>
+
+                                        <div style="margin-left: auto;color: #FF9933">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 change">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img src="https://cdn.tuoitrethudo.com.vn/stores/news_dataimages/phamthanhtrung/112021/12/05/149ac61a42eeb5c23875c9e23e098829.png?rt=20211112052945" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">Chữa lành tâm hồn những người đang âu lo..</p>
+                                    <div class="d-flex">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <p style="font-size: 15px; color: gray;">1h30p</p>
+
+                                        <div style="margin-left: auto;color: #FF9933">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrappe1r">
+                    <a href="#">
+                        <span>
+                            Xem thêm
+                            <i class="fa-solid fa-chevron-right"></i> 
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

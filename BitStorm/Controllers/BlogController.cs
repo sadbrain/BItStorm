@@ -14,6 +14,7 @@ namespace BitStorm.Controllers
         {
             return View();
         }
+
         public IActionResult DisplayByOption(int? categoryId)
         {
             if(categoryId == null)
@@ -42,5 +43,6 @@ namespace BitStorm.Controllers
             };
             return View(viewModel);
         }
+
     }
 }
