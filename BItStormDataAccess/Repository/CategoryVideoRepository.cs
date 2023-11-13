@@ -24,4 +24,9 @@ public class CategoryVideoRepository : Repository<CategoryVideo>, ICategoryVideo
     {
         _db.CategoryVideos.Update(obj);
     }
+    public IEnumerable<CategoryVideo> GetAllByCategoryId(int categoryId)
+    {
+        IEnumerable<CategoryVideo> categoryVideos = _db.CategoryVideos.Where(c => c.CategoryId == categoryId);
+        return categoryVideos.ToList();
+    }
 }
