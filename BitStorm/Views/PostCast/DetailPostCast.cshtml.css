@@ -110,12 +110,20 @@ h4 {
 }
 #content_video {
     width: 23.5% !important;
-    padding: 20px !important
+    padding: 20px !important;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 
-h6 {
-    font-size: 15px;
-}
+    #content_video:hover {
+        transform: scale(1.05);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  
+    }
+
+    h6 {
+        font-size: 15px;
+    }
 .container-fluid .card {
     /* background-color: rgb(163, 163, 163); */
     border: 0 solid !important;
