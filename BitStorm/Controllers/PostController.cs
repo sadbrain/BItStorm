@@ -13,8 +13,8 @@ public class PostController : Controller
     }
     public IActionResult Index()
     {
-        List<Post> objPosts = _unitOfWork.Post.GetAll().ToList();
-        return View(objPosts);
+        //List<Post> objPosts = _unitOfWork.Post.GetAll().ToList();
+        return View();
     }
     public IActionResult Create()
     {

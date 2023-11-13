@@ -35,15 +35,15 @@ body {
     display: flex;
 }
 
-.navbar-center a {
+.navbar-center .nav-link {
     margin: 0 12px;
     font-size: 20px;
-    color: black;
+    color: black !important;
     position: relative;
     text-decoration: none;
 }
 
-.navbar-center a:hover {
+.nav-link:hover {
     color: #002bff;
 }
 
