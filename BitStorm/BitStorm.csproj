@@ -30,7 +30,6 @@
 	  <ProjectReference Include="..\BItStormDataAccess\DataAccess.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="wwwroot\NewFolder1\" />
-	  <Folder Include="wwwroot\NewFolder\NewFolder\" />
+	  <Folder Include="wwwroot\Assert\" />
 	</ItemGroup>
 </Project>
