@@ -1,0 +1,89 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header_details {
+    background-color: #FCF7EF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+    .header_details h1 {
+        font-size: 60px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .header_details h6 {
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+.hour {
+    font-size: 10px;
+    color: darkgray;
+}
+
+.header_details p {
+    padding-top: 10px;
+}
+
+.suggest hr {
+    border: none;
+    width: 100%;
+    height: 2px; /* Đặt chiều cao của hr */
+    background-color: black;
+    background-color: black;
+    margin: 10px 0;
+}
+
+.suggest h6 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.suggest p {
+    padding-bottom: 20px;
+}
+
+.text {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+    .text h6 {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+.name h6 {
+    margin: 10px;
+    padding-top: 10px;
+}
+
+.name p {
+    margin-left: 10px;
+    font-size: 10px;
+    color: gray;
+}
+
+.button_details button {
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #fff;
+    margin-left: 10px;
+}
+
+.button_details {
+    padding-top: 10px;
+}
+
+    .button_details i {
+        padding-right: 5px;
+    }
