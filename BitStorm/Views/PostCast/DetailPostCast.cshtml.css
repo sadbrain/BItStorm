@@ -1,7 +1,9 @@
-﻿.container-fluid video {
-    margin-bottom: 30px;
-    border-radius: 8px;
+﻿
+#content {
+    padding-top: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
 .subsribe {
     margin-left: 50px;
     height: 40px;
@@ -22,12 +24,28 @@ h4 {
 .star {
     color: gold;
 }
+.like,
+.didlike {
+    color: black;
+    transition: color 0.3s;
+}
+
+    .like:hover,
+    .didlike:hover {
+        color: blue;
+        cursor: pointer;
+    }
+
 .like {
     color: blue;
+    /* Thêm các hiệu ứng hoặc chuyển động khác tại đây */
 }
+
 .didlike {
-    color: rgb(168, 45, 45);
+    color: red;
+    /* Thêm các hiệu ứng hoặc chuyển động khác tại đây */
 }
+
 .avatar_comment {
     width: 50px;
     object-fit: cover;
@@ -42,12 +60,17 @@ h4 {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-left : 30px;
 }
 .view {
     font-weight: bold;
 }
 
-
+#option_of_video{
+   
+     padding: 10px;
+     padding-right: 30px; padding-left: 30px;
+}
 .play-button {
     position: absolute;
     top: 50%;
@@ -63,11 +86,14 @@ h4 {
     outline: 20px solid rgba(144, 144, 231, 0.482);
 }
 .video-container {
-    position: relative;
+
     display: inline-block;
     position: relative;
-    width : 80vw;
-    left : -20px;
+    width : 100vw;
+    left: -30px;
+    border-radius : 8px;
+    margin-bottom : 20px;
+    
 }
 .play-button {
     outline: 2px solid rgba(255, 255, 255, 0.5) !important;
@@ -81,6 +107,7 @@ h4 {
     color: white;
     cursor: pointer;
     transition: outline .3s ease-in-out;
+    left: 45vw;
 }
     .play-button:hover {
         outline: 30px solid rgba(255, 255, 255, 0.5) !important;
@@ -89,13 +116,14 @@ h4 {
 .pause-icon {
     display: none;
 }
+
 .sub_title span {
     color: #000;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 19px; /* 158.333% */
-    width : 75px;
+    width: 75px;
 }
 .sub_title span:last-child {
     color: #000;
@@ -136,7 +164,7 @@ h4 {
         transform: scale(1.04);
     }
 input {
-    width: 70vw !important;
+    width: 87vw !important;
 }
 #comment-list {
     /* background-color: rgba(128, 128, 128, 0.208); */
@@ -151,3 +179,9 @@ input {
 .offical{
      padding-left : 30px;
 }
+
+video {
+    margin-bottom: 30px;
+    border-radius: 8px !important;
+}
+

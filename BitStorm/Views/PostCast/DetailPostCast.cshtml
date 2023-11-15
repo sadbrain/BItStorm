@@ -3,12 +3,12 @@
 
     <title>Blog</title>
 
-<div class="m-5">
+<div class="m-5" id="content">
 
     <!-- phần 1 -->
-    <div class="container-fluid">
+    <div class="container" id="contain_main_video">
         <div class="video-container">
-            <video class="w-100" src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
+            <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
             <i class="play-button fas fa-play"></i>
             <i class="pause-icon fas fa-pause"></i>
 
@@ -45,12 +45,14 @@
             pauseIcon.style.display = 'none';
         });
    </script>
+
+
     <div class="name">
         <h2 class="text-primary">Câu truyện truyền cảm hứng từ Cây tre | Bài học cuộc sống</h2>
     </div>
     <!-- phần 2 -->
 
-    <div class="d-flex justify-content-between align-items-center my-5">
+    <div class="d-flex justify-content-between align-items-center my-5" id="option_of_video">
         <div class="text-muted d-flex gap-3">
             <p class="view bg-light p-2">132,757 views</p>
             <p class="view bg-light p-2">22 hours ago</p>
@@ -123,6 +125,7 @@
                             <button class="btn btn-light">
                                 <i class="far fa-thumbs-down p-1 didlike"></i> Dislike
                             </button>
+                        
                         </div>
 
                         <div class="d-flex gap-2 p-2 align-content-center">
@@ -209,6 +212,21 @@
 
         </button>
     </div>
+<script>
+    var likeButton = document.querySelector('.like');
+    var dislikeButton = document.querySelector('.dislike');
+
+    likeButton.addEventListener('click', toggleLike);
+    dislikeButton.addEventListener('click', toggleDislike);
+
+    function toggleLike() {
+        likeButton.classList.toggle('liked');
+    }
+
+    function toggleDislike() {
+        dislikeButton.classList.toggle('disliked');
+    }
+</script>
 
     <!-- phần 6 -->
     <div class="container d-flex gap-4 flex-wrap justify-content-center list_product">

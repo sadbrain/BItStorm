@@ -1,28 +1,20 @@
 var video = document.getElementById('video');
-var playButton = document.querySelector('.play-button');
-var pauseIcon = document.querySelector('.pause-icon');
-var timeoutId;
-playButton.addEventListener('click', function () {
-    if (video.paused) {
-        video.play();
-        playButton.style.display = 'none';
-        pauseIcon.style.display = 'inline-block';
-        playButton.style.outline = 'none';
+var welcomeMessageShown = false;
 
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(function () {
-            pauseIcon.style.display = 'none';
-        }, 2000);
-    } else {
-        video.pause();
+video.addEventListener('play', function () {
+    if (!welcomeMessageShown) {
+        alert('Welcome! Enjoy watching the video.');
+        welcomeMessageShown = true;
     }
 });
 
-pauseIcon.addEventListener('click', function () {
-    video.pause();
-});
+video.addEventListener('timeupdate', function () {
+    var currentTime = video.currentTime;
+    var duration = video.duration;
 
-video.addEventListener('pause', function () {
-    playButton.style.display = 'inline-block';
-    pauseIcon.style.display = 'none';
+    if (currentTime >= 5 && currentTime <= duration) {
+        alert('You have watched 3 minutes of the video. Great job!');
+    } else if (currentTime > duration) {
+        alert('Congratulations! You have finished watching the video.');
+    }
 });
