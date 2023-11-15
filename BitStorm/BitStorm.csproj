@@ -29,4 +29,8 @@
 	  <ProjectReference Include="..\BitStorm.Model\Models.csproj" />
 	  <ProjectReference Include="..\BItStormDataAccess\DataAccess.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="wwwroot\NewFolder1\" />
+	  <Folder Include="wwwroot\NewFolder\NewFolder\" />
+	</ItemGroup>
 </Project>
