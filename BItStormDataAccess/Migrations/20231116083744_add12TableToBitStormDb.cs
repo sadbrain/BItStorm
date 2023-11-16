@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccess.Migrations
 {
-    public partial class add2TabletoBitStormDb : Migration
+    public partial class add12TableToBitStormDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,6 +42,7 @@ namespace DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RoleId = table.Column<int>(type: "int", nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -55,7 +56,6 @@ namespace DataAccess.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
             migrationBuilder.CreateTable(
                 name: "Experts",
                 columns: table => new
@@ -78,31 +78,30 @@ namespace DataAccess.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
             migrationBuilder.CreateTable(
-                name: "MeetingRooms",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DateStart = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    ExpertId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MeetingRooms", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_MeetingRooms_Experts_ExpertId",
-                        column: x => x.ExpertId,
-                        principalTable: "Experts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_MeetingRooms_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id");
-                });
+               name: "MeetingRooms",
+               columns: table => new
+               {
+                   Id = table.Column<int>(type: "int", nullable: false)
+                       .Annotation("SqlServer:Identity", "1, 1"),
+                   DateStart = table.Column<DateTime>(type: "datetime2", nullable: false),
+                   UserId = table.Column<int>(type: "int", nullable: false),
+                   ExpertId = table.Column<int>(type: "int", nullable: false)
+               },
+               constraints: table =>
+               {
+                   table.PrimaryKey("PK_MeetingRooms", x => x.Id);
+                   table.ForeignKey(
+                       name: "FK_MeetingRooms_Experts_ExpertId",
+                       column: x => x.ExpertId,
+                       principalTable: "Experts",
+                       principalColumn: "Id");
+                   table.ForeignKey(
+                       name: "FK_MeetingRooms_Users_UserId",
+                       column: x => x.UserId,
+                       principalTable: "Users",
+                       principalColumn: "Id");
+               });
 
             migrationBuilder.CreateTable(
                 name: "PostCasts",
@@ -188,6 +187,7 @@ namespace DataAccess.Migrations
                     Title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image_url = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -235,6 +235,7 @@ namespace DataAccess.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsAnonymous = table.Column<bool>(type: "bit", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     PostId = table.Column<int>(type: "int", nullable: false)
@@ -387,5 +388,6 @@ namespace DataAccess.Migrations
             migrationBuilder.DropTable(
                 name: "Roles");
         }
+
     }
 }
