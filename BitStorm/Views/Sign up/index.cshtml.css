@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading {
+    color: rgb(30, 119, 228) !important;
+}
+
+.input-group {
+    width: 40%;
+}
+
+.container_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.continue_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont_btn {
+    width: 30%;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(9, 117, 222);
+    color: white;
+    font-weight: bold;
+}
