@@ -20,12 +20,20 @@
 	  
     <Content Remove="Views\Shared\_Notification.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Login\index.cshtml.css" />
+    <None Remove="Views\Sign up\index.cshtml.css" />
+  </ItemGroup>
 
 	<ItemGroup>
 	  <UpToDateCheckInput Remove="Views\Shared\_Notification.cshtml" />
 	</ItemGroup>
 	<ItemGroup>
 	  <_ContentIncludedByDefault Remove="Views\Shared\_Notification.cshtml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Include="Views\Login\index.cshtml.css" />
+	  <Compile Include="Views\Sign up\index.cshtml.css" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Views\Shared\_Notification.cshtml" />
