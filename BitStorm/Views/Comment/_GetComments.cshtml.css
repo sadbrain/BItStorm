@@ -1,0 +1,21 @@
+﻿.post-comment {
+    display: flex;
+}
+
+.post-content-comment {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: rgb(200, 228, 255);
+    padding: 0.5em 0;
+}
+
+.post-content-comment p {
+    margin-bottom: 0;
+    padding: 0 1em;
+}
+
+.post-content-comment p:last-child {
+    /* width: 60vw; */
+    max-width: 60vw;
+    word-break: break-all;
+}

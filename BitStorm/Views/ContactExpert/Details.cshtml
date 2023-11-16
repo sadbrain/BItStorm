@@ -1,7 +1,84 @@
-﻿
-@{
-    ViewData["Title"] = "Details";
-}
+﻿<script src=" https://kit.fontawesome.com/e1aaf64c7e.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/booking.css">
+<title>Booking</title>
+<div class="container-fluid">
+    <img class="top_image w-100" src="~/AssertQuyen/top-booking-image.png" alt="image">
 
-<h1>Expert Details</h1>
+<div class="row mt-5">
+        <div class="col-sm-6 doctor_image p-lg-2">
+        <img src="~/AssertQuyen/detailDoctor.png" alt="image">
+    </div>
+    <div class="col-sm-6 container_content">
+        <p id="text">Doctor</p>
+        <h2>Chuyên gia tâm lý Trần Anh Vũ</h2>
+        <p>
+            Thạc sĩ Anh Vũ đã có hơn 9 năm kinh nghiệm trong lĩnh vực tham vấn và điều trị tâm lý, hơn 2000 giờ tiếp xúc lâm sàng
+            được giám sát bởi các nhà trị liệu kỳ cựu đến từ Mỹ, Úc v.v. Thạc sĩ Anh Vũ hiện đang công tác tại Công ty TNHH Tham Vấn
+            Tâm lý Giang Vũ, là giảng viên bộ môn Tâm lý ứng dụng trường Đại học Hoa Sen.
+        </p>
+    </div>
+</div>
+<div class="row text-center mt-4 container_time">
+    <h3 class="mb-4">Thời gian chuyên gia có thể hỗ trợ</h3>
+    <div class="col-sm-3 booking_time" onclick="toggleCheckbox(this)">
+        <input type="checkbox" name="time" value="12-13" style="display: none;"> 12pm-13pm
+    </div>
+    <div class="col-sm-3 booking_time" onclick="toggleCheckbox(this)">
+        <input type="checkbox" name="time" value="15-16" style="display: none;"> 15pm-16pm
+    </div>
+    <div class="col-sm-3 booking_time" onclick="toggleCheckbox(this)">
+        <input type="checkbox" name="time" value="19-20" style="display: none;"> 19pm-20pm
+    </div>
+    <div class="col-sm-3 booking_time" onclick="toggleCheckbox(this)">
+        <input type="checkbox" name="time" value="21-22" style="display: none;"> 21pm-22pm
+    </div>
+</div>
+<div class="row mt-4 d-flex justify-content-center">
+    <div class="col-sm-1 viewOption">
+        <i class="fa-solid fa-arrow-left m-lg-1"></i> Quay lại
+    </div>
+    <div class="col-sm-2 viewOption">
+        <i class="fa-solid fa-arrow-right m-lg-1"></i> Xem thêm
+    </div>
+</div>
+<!-- <section class="container my-5"> -->
+<h4 class="mb-4 mt-5 comment">Bình luận</h4>
+    <div class="row p-lg-2">
+    <div class="col-sm-4 container_card"> 
+            <div class="testimonial-card">
+            <img src="~/AssertQuyen/client1.png" alt="Client 1" class="img-fluid">
+            <h5 class="client-title">Nhờ bác Anh mà tôi đã được chữa lành</h5>
+            <p class="client-quote">
+                Trước đây tôi không thể mở lòng với bất kì ai, nhưng từ khi được sự tư vấn tâm lý của bác Anh, tôi đã trở nên tự tin hơn
+                rất nhiều.
+            </p>
+            <img src="~/AssertQuyen/stars.png" alt="stars">
+        </div>
+    </div>
+        <div class="col-sm-4 container_card">
+            <div class="testimonial-card">
+            <img src="~/AssertQuyen/client1.png" alt="Client 1" class="img-fluid">
+            <h5 class="client-title">Nhờ bác Anh mà tôi đã được chữa lành</h5>
+            <p class="client-quote">
+                Trước đây tôi không thể mở lòng với bất kì ai, nhưng từ khi được sự tư vấn tâm lý của
+                bác Anh, tôi đã trở nên tự tin hơn
+                rất nhiều.
+            </p>
+            <img src="~/AssertQuyen/stars.png" alt="stars">
+        </div>
+    </div>
+        <div class="col-sm-4 container_card">
+            <div class="testimonial-card">
+            <img src="~/AssertQuyen/client1.png" alt="Client 1" class="img-fluid">
+            <h5 class="client-title">Nhờ bác Anh mà tôi đã được chữa lành</h5>
+            <p class="client-quote">
+                Trước đây tôi không thể mở lòng với bất kì ai, nhưng từ khi được sự tư vấn tâm lý của
+                bác Anh, tôi đã trở nên tự tin hơn
+                rất nhiều.
+            </p>
+            <img src="~/AssertQuyen/stars.png" alt="stars">
+        </div>
+    </div>
+</div>
+</section>
 

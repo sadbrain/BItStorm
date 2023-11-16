@@ -252,6 +252,10 @@ namespace DataAccess.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("RoleId");
@@ -435,7 +439,16 @@ namespace DataAccess.Migrations
 
                     b.Navigation("Role");
                 });
+            modelBuilder.Entity("Models.Expert", b =>
+            {
+                b.HasOne("Models.Role", "Role")
+                    .WithMany()
+                    .HasForeignKey("RoleId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
 
+                b.Navigation("Role");
+            });
             modelBuilder.Entity("Models.UserPreference", b =>
                 {
                     b.HasOne("Models.Category", "Category")

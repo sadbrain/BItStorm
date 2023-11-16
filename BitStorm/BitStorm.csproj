@@ -5,15 +5,24 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0-preview.7.21378.4">
+		<PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.0-preview.1.23111.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.2.23128.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0-preview.1.23111.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-preview.1.23111.4">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-rc.2.23509.1" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-preview.7.23408.2" />
 	</ItemGroup>
-  <ItemGroup>
+	<ItemGroup>
+	  
     <Content Remove="Views\Shared\_Notification.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Login\index.cshtml.css" />
+    <None Remove="Views\Sign up\index.cshtml.css" />
   </ItemGroup>
 
 	<ItemGroup>
@@ -21,6 +30,10 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <_ContentIncludedByDefault Remove="Views\Shared\_Notification.cshtml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Include="Views\Login\index.cshtml.css" />
+	  <Compile Include="Views\Sign up\index.cshtml.css" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Views\Shared\_Notification.cshtml" />
