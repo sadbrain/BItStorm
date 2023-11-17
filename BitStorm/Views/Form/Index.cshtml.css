@@ -1,0 +1,41 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bodier {
+    background-image: url(../../Assert/hinh123.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    width: 50%;
+}
+
+    .container button {
+        padding: 10px 20px;
+        border: none;
+        background-color: cadetblue;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .container h6 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .container input[type="radio"],
+    .container input[type="checkbox"] {
+        margin-right: 5px;
+    }
