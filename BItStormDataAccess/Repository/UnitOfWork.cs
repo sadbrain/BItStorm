@@ -51,8 +51,4 @@ public class UnitOfWork : IUnitOfWork
         _db.SaveChanges();
     }
 
-    void IUnitOfWork.Save()
-    {
-        throw new NotImplementedException();
-    }
 }

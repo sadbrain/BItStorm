@@ -14,7 +14,14 @@ namespace BitStorm.Controllers
         {
             return View();
         }
-
+        public IActionResult DetailVideo()
+        {
+            return View();
+        }
+        //public IActionResult DetailPostCast()
+        //{
+        //    return View();
+        //}
         public IActionResult DisplayByOption(int? categoryId)
         {
             if(categoryId == null)

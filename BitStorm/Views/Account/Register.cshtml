@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+@model User
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="container mt-4">
+        <h2 class="heading text-center">
+            Tạo một tài khoản BitStorm miễn phí
+        </h2>
+        <div class="row container_input mt-5">
+            <div class="input-group mb-4">
+                <input type="text" class="form-control" placeholder="Tên đăng nhập" aria-label="Tên đăng nhập"
+                       aria-describedby="basic-addon1" asp-for="Name" />
+                <span asp-validation-for="Name" class="text-danger d-block"></span>
+
+            </div>
+        </div>
+        <div class="row container_input">
+            <div class="input-group mb-4">
+                <input type="text" class="form-control" placeholder="Địa chỉ email" aria-label="Địa chỉ email"
+                       aria-describedby="basic-addon1"asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger d-block"></span>
+            </div>
+        </div>
+        <div class="row container_input">
+            <div class="input-group mb-4">
+                <input type="password" class="form-control" placeholder="Mật khẩu (ít nhất 8 kí tự)" aria-label="Mật khẩu (ít nhất 8 kí tự)"
+                       aria-describedby="basic-addon1" asp-for="Password" />
+                 <span asp-validation-for="Password" class="text-danger d-block"></span> 
+
+            </div>
+        </div>
+        <div class="continue_btn">
+            <button class="cont_btn" type="submit">Tiếp tục</button>
+        </div>
+    </div>
+
+}
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

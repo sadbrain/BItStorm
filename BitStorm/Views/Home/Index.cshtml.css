@@ -147,11 +147,16 @@
     border-radius: 25px;
     background-color: #FFF;
     transition: 0.5s;
+    
+    cursor : pointer;
+    transition : all .3s ease;
 }
-
     .card:hover {
-        border: #4070F4 solid 2px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transform: scale(1.05);
     }
+
+ 
 
 .image-content,
 .card-content {
@@ -166,32 +171,31 @@
     row-gap: 5px;
     padding: 25px 0;
 }
-
-/* .card-image{
-  position: relative;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  background: #FFF;
-  padding: 3px;
+.main_text{
+     margin-left : 150px;
 }
-.card-image .card-img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #4070F4;
-} */
+.row{
+     margin-top: 100px;
+}
 .name {
     font-size: 18px;
     font-weight: 500;
     color: #333;
 }
-
+.choise_middle{
+     margin-top: -100px;
+}
+.history{
+    gap: 150px;
+}
 .description {
     font-size: 14px;
     color: #707070;
     text-align: center;
+}
+.choise_bottom{
+     margin-bottom:100px;
+     margin-top: -80px;
 }
 
 .button {

@@ -1,0 +1,49 @@
+﻿.ig_top {
+    height: 60vh;
+    background-image: url(https://sixdegreesfromdave.com/wp-content/uploads/2019/07/image4-11.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.avata {
+    text-align: center;
+}
+
+    .avata img {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        margin-top: 30px;
+        transition: all 0.2s ease;
+        cursor : pointer;
+    }
+    .avata img:hover {
+        transform: scale(1.05);
+    }
+
+.card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    cursor: pointer;
+    gap: 10px;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+    .card:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transform: scale(1.05);
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card p {
+        text-align: center;
+    }
+
+#content {
+    
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

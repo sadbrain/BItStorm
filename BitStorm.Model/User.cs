@@ -16,7 +16,7 @@ public class User
     public int Id { get; set; }
     [Required]
     [MaxLength(30)]
-    [DisplayName("Category Name")]
+    [DisplayName("Name")]
     public string Name { get; set; }
     [Required]
     [EmailAddress]
@@ -27,7 +27,7 @@ public class User
     [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).+$", ErrorMessage = "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.")]
     [DisplayName("Password")]
     public string Password { get; set; }
-
+    public string Url { get; set;  }
     [ForeignKey("Role")]
     public int RoleId { get; set; }
     public Role Role { get; set; }

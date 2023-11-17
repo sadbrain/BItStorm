@@ -223,14 +223,26 @@
     outline: none;
     background-color: transparent;
 }
+.input-add-comment button {
+/*    pointer-events: none;
+    transition: all 0.3s ease;*/
+    background: #fff;
+    border: none;
+    outline: none;
+    color: #007bff;
+    position: relative;
+    top: -30px;
+    left: 88%;
+    font-size: 16px;
 
+}
 /* Input label */
-.input-label {
+    .input-label {
     position: absolute;
     top: 0;
     left: 0;
     font-size: 16px;
-    color: rgba(204, 204, 204, 0);
+    /*color: rgba(204, 204, 204, 0);*/
     pointer-events: none;
     transition: all 0.3s ease;
 }
@@ -247,15 +259,20 @@
 }
 
 /* Input field:focus styles */
-.input-field:focus + .input-label {
+.input-field:focus + .input-label  {
     top: -20px;
     font-size: 12px;
+    color: #007bff;
+}
+.input-field:focus button {
+
     color: #007bff;
 }
 
     .input-field:focus + .input-label + .input-highlight {
         width: 100%;
     }
+
 /* end coment */
 /* end */
 
@@ -305,7 +322,6 @@
 
     /* Hide default HTML checkbox */
     .switch input {
-        opacity: 0;
         width: 0;
         height: 0;
     }
@@ -400,7 +416,10 @@ input:checked + .slider:before {
         width: 100%;
         font-weight: 500;
     }
-
+.switch input[type="checkbox"]{
+    width:100%;
+    height:20px;    
+}
 .close {
     color: #aaa;
     float: right;

@@ -17,7 +17,9 @@
     <header>
         <div class="navbar">
             <div class="navbar-left" asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="~/asset/logo_header.png" alt="Logo" class="logo">
+                <a class="nav-link text-black" asp-area="" asp-controller="Home" asp-action="Index"> <img src="~/asset/logo_header.png" alt="Logo" class="logo"></a>
+
+               
                 <h1 class="group-name">BitStorm</h1>
             </div>
             <div class="navbar-center">
@@ -29,8 +31,30 @@
                 <a class="nav-link text-black" asp-area="" asp-controller="AboutUs" asp-action="Index">Về chúng tôi</a>
             </div>
             <div class="navbar-right">
-                <button class="btn-login btn-header">Đăng nhập</button>
-                <button class="btn-register btn-header">Đăng kí</button>
+                @if (@Context.Request.Cookies.TryGetValue("UserId", out string user)){
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">    
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTymz8hEzCiURnEoQYnLTiehMAGb4xIeKWRDQ&usqp=CAU" alt="Logo" class="logo" style="border-radius:50%" />
+                        </a>
+                        <div class="dropdown-menu" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 42.4px, 0px);" data-popper-placement="bottom-start">
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Logout" >Logout</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-controller="UserProfile" asp-action="Index" >Profile</a>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </li>
+                }
+                else
+
+                {
+
+                    <button class="btn-login btn-header"><a class="nav-link text-black" asp-area="" asp-controller="Account" asp-action="Login">Đăng nhập</a></button>
+                    <button class="btn-register btn-header"><a class="nav-link text-black" asp-area="" asp-controller="Account" asp-action="Register">Đăng Ký</a></button>
+                }
+
+          @*          
+ *@
+               
            
             </div>
         </div>
