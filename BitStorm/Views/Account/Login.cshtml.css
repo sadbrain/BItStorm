@@ -1,17 +1,19 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 .heading {
-    color: rgb(30, 119, 228) !important;
+    color: rgb(30, 119, 228);
 }
 
 .input-group {
     width: 40%;
 }
-
+    .input-group input {
+        padding: 10px;
+    }
 .container_input {
     display: flex;
     justify-content: center;
@@ -26,10 +28,11 @@
 
 .cont_btn {
     width: 30%;
-    height: 40px;
+    height: 40px;   
     border-radius: 50px;
     border: none;
     background-color: rgb(9, 117, 222);
     color: white;
     font-weight: bold;
 }
+
