@@ -14,7 +14,6 @@ public class Video
     [Key]
     public int Id { get; set; }
     [Required]
-    [MaxLength(50)]
     [DisplayName("Title Name")]
     public string Title { get; set; }
     [Required]

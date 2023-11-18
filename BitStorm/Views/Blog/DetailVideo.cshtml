@@ -1,16 +1,17 @@
-﻿
-
-
-   <title>Blog</title>
-
+﻿@model Video
+ <title>Blog</title>
+ 
 <div class="m-5" id="content">
 
     <!-- phần 1 -->
     <div class="container" id="contain_main_video">
         <div class="video-container">
-            <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
-            <i class="play-button fas fa-play"></i>
-            <i class="pause-icon fas fa-pause"></i>
+            
+            <iframe width="91%" height="700px" src="@Model.Url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            @* <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video> *@
+@*             <i class="play-button fas fa-play"></i>
+            <i class="pause-icon fas fa-pause"></i> *@
 
         </div>
     </div>
@@ -46,9 +47,9 @@
         });
    </script>
 
-
+   
     <div class="name">
-        <h2 class="text-primary">Câu truyện truyền cảm hứng từ Cây tre | Bài học cuộc sống</h2>
+        <h2 class="text-primary">@Model.Title</h2>
     </div>
     <!-- phần 2 -->
 

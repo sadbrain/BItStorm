@@ -61,6 +61,7 @@ public class AccountController : Controller
             obj.Url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnfoRLDgUkFrFW68UD_RvX0SXOF9L7jKxVaQ&usqp=CAU";
             _unitOfWork.User.Add(obj);
             _unitOfWork.Save();
+            User user2= _unitOfWork.User.Get(u => u.Email == obj.Email);
             return RedirectToAction("Login", "Account");
         }
         else
@@ -69,11 +70,22 @@ public class AccountController : Controller
 
             return View(obj);
         }
-
-
-
-
     }
+    //public IActionResult FormReference(int id)
+    //{
+    //    List<Category> categories = _unitOfWork.Category.GetAll().ToList();
+    //    ViewBag.categories = categories;
+    //    return View(id);
+    //}
+    //[HttpGet]
+    //[ValidateAntiForgeryToken]
+
+    //public IActionResult FormReference(int id)
+    //{
+    //    return View(id);
+
+    //}
+
     public IActionResult Logout()
     {
         //Session["UserId"] = null;

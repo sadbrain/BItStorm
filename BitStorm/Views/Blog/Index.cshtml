@@ -1,11 +1,8 @@
-
+@model VideoPostCastVM
 @{
     ViewData["Title"] = "Index";
 }
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog</title>
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-myzF3TDLbN1aBtxw7X3LtcBxSbQkW9rY9Mj1fCz5iRD2dI+Xk0n+so1ZfCm7B8vU6v2TfGyJCBjQp5jJNzI8dA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-1Mge3xJzTfZPX0m3i2U1d6FieiyWu5p6ZiHjRbF5l3Y8lG5+9u8uEnD9fBbI2NzB9UeL4b5U6w6+xBGx8xjMLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -24,54 +21,60 @@
         <input type="text" placeholder="Tìm kiếm...">
     </div>
     <div class="box_choice d-flex">
-        <button class="btn btn-light box_choice_btn">
-            Podcast
-        </button>
-        <button class="btn btn-light box_choice_btn">
-            Nghe nhạc
-        </button>
-        <button class="btn btn-light box_choice_btn">
-            Những câu chuyện
-        </button>
+
+        
+        @foreach (var category in @ViewBag.categories)
+        {
+            <button class="btn btn-light box_choice_btn">
+                <a class="text-decoration-none text-black" asp-controller="Blog" asp-action="DisplayByOption" asp-route-id="@category.Id">
+                    @category.Name
+                </a>
+            </button>
+        }
+
+
+
     </div>  
 </div>
 <div class="content" id="content">
 
     <h2 class="text-primary sub_title">Dành cho bạn</h2>
-    <div class="container" id="container1">
+    <div class="container" id="container1"> 
+        @foreach (var video in Model.Videos.OrderByDescending(obj => obj.Id).ToList())
+        {
             <div class="card content_video" id="content_video">
-
-                <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
-
+                
+                @* <video src="@video.Url" id="video" controls></video> *@
+                <iframe width="100%" src="@video.Url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="card-body">
-                    <div class="item_style">
+           @*          <div class="item_style">
                         <h6>Life</h6>
                         <h6>5 min read</h6>
-                    </div>
+                    </div> *@
                     <h3 class="card-title item_name">
-                        Cách chạy bộ để thoải mái tinh thần, nâng cao sức khỏe
+                        @video.Title
                     </h3>
                     <p class="card-text item_sub_title">
                         Tập thể dục là một trong những điều quan trọng nhất bạn có thể làm để chống lại căng thẳng.
                     </p>
 
-                    <a href="../Views/PostCast/DetailPostCast.cshtml">
                         <p class="text-primary">
-                        <a asp-controller="Blog" asp-action="DetailVideo" >
+                        <a asp-controller="Blog" asp-action="DetailVideo" asp-route-id="@video.Id">
 
-                            Xem thêm
-                    </a>
+                                Xem thêm
+                            </a>
 
                             <i class="fa-solid fa-chevron-right"></i>
 
                         </p>
-                    </a>
 
                 </div>
 
             </div>
+        }
 
-        <div class="card content_video" id="content_video">
+
+@*         <div class="card content_video" id="content_video">
             <video src="https://v4.cdnpk.net/videvo_files/video/free/video0483/large_watermarked/_import_60d962f06b3ef8.86089157_FPpreview.mp4" id="video" controls></video>
 
             <div class="card-body">
@@ -195,7 +198,7 @@
                </a>
 
             </div>
-        </div>
+        </div> *@
     </div>
 </div>
 <div class="content2">
