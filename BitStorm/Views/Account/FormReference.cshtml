@@ -1,8 +1,7 @@
 ﻿
-@model List
 <title>Form</title>
 <div class="bodier">
-    <form method="get">
+    <form method="post">
         <div class="container d-flex">
             <div class="col-sm-5">
             <h1>  HÔM NAY BẠN ỔN KHÔNG ?</h1>
@@ -18,12 +17,12 @@
                 @foreach (var category in ViewBag.categories)
                 {
 
-                    <input type="checkbox" value="@category.Name" />
+                    <input type="checkbox" value="@category.Name" name="@category.Name"/>
                     @category.Name  
                     <br />
                 }
                 <input type="checkbox" value="khác" />Khác...<br />
-                <button>Tiếp tục</button>
+                <button type ="submit">Tiếp tục</button>
 
                 
 @*                <input type="checkbox" value="bạo lực học đường" />Bạo Lực Học Đường <br />

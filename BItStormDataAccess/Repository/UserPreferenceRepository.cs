@@ -24,4 +24,9 @@ public class UserPreferenceRepository : Repository<UserPreference>, IUserPrefere
     {
         _db.UserPreferences.Update(obj);
     }
+    public IEnumerable<UserPreference> GetAllByUserId(int userId)
+    {
+        IEnumerable<UserPreference> up = _db.UserPreferences.Where(up => up.UserId == userId);
+        return up.ToList();
+    }
 }

@@ -28,7 +28,18 @@ public class AccountController : Controller
         if(user != null)
         {
             Response.Cookies.Append("UserId", user.Id.ToString());
-            return RedirectToAction("Index", "Home");
+            UserPreference up = _unitOfWork.UserPreference.Get(u => u.UserId == user.Id);
+            if(up != null)
+            {
+                return RedirectToAction("Index", "Home");
+
+
+            }
+            else
+            {
+                return RedirectToAction("FormReference");
+
+            }
 
         }
         else
@@ -71,20 +82,36 @@ public class AccountController : Controller
             return View(obj);
         }
     }
-    //public IActionResult FormReference(int id)
-    //{
-    //    List<Category> categories = _unitOfWork.Category.GetAll().ToList();
-    //    ViewBag.categories = categories;
-    //    return View(id);
-    //}
-    //[HttpGet]
-    //[ValidateAntiForgeryToken]
+    public IActionResult FormReference()
+    {
+        List<Category> categories = _unitOfWork.Category.GetAll().ToList();
+        ViewBag.categories = categories;
+        return View();
+    }
+    [HttpPost]
+    [ValidateAntiForgeryToken]
 
-    //public IActionResult FormReference(int id)
-    //{
-    //    return View(id);
+    public IActionResult FormReference(IFormCollection form)
+    {
+        int.TryParse(Request.Cookies["UserId"], out int userId);
+        foreach (string key in form.Keys)
+        {
 
-    //}
+            var category = _unitOfWork.Category.Get(c => c.Name == key);
+            if (category != null)
+            {
+                UserPreference up = new UserPreference
+                {
+                    CategoryId = category.Id,
+                    UserId = userId,
+                };
+                _unitOfWork.UserPreference.Add(up);
+                _unitOfWork.Save();
+            }
+        }
+        return RedirectToAction("Index", "Home");
+
+    }
 
     public IActionResult Logout()
     {

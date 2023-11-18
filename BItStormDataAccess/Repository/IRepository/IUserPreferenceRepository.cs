@@ -9,4 +9,7 @@ namespace DataAccess.Repository.IRepository;
 public interface IUserPreferenceRepository : IRepository<UserPreference>
 {
     void Update(UserPreference obj);
+    IEnumerable<UserPreference> GetAllByUserId(int userId);
+
+
 }
