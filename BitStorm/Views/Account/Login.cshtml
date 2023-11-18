@@ -1,0 +1,39 @@
+﻿@model User
+<div class="container mt-4">
+    <h2 class="heading text-center">
+        Đăng nhập vào tài khoản của bạn
+    </h2>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row container_input mt-5">
+
+            <div class="input-group mb-4">
+                <input type="text" class="form-control" placeholder="Địa chỉ email" aria-label="Địa chỉ email"
+                        aria-describedby="basic-addon1" asp-for="Email">
+                <span asp-validation-for="Email" class="text-danger d-block"></span>
+
+            </div>
+        </div>
+        <div class="row container_input">
+            <div class="input-group mb-4">
+                <input type="password" class="form-control" placeholder="Mật khẩu (ít nhất 8 kí tự)"
+                        aria-label="Mật khẩu (ít nhất 8 kí tự)" aria-describedby="basic-addon1" asp-for="Password">
+            </div>
+        </div>
+        <div class="row text-center mb-3">
+            <a href="#">Quên mật khẩu</a>
+        </div>
+        <div class="continue_btn">
+            <button type="submit" class="cont_btn">Đăng nhập</button>
+        </div>
+     }
+    
+
+    
+</div>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

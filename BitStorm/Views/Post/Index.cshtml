@@ -3,7 +3,6 @@
     ViewData["Title"] = "Index";
 }
 @model List<Post>
-@ViewBag.isAnonymous
 <div class="container-fluid">
     <div class="row card-post">
         <div class="row post-bar box_search">
@@ -18,7 +17,7 @@
         @{
             DateTime current_datetime = DateTime.Now;
         }
-         @foreach (var post in Model.OrderByDescending(obj => obj.Id).ToList())
+        @foreach (var post in Model.OrderByDescending(obj => obj.Id).ToList())
         {
             TimeSpan gap_datetime = current_datetime - post.CreatedAt;
             double gap_hour = gap_datetime.TotalHours;
@@ -28,12 +27,12 @@
                 {
                     <div class="post-row1">
                         <div class="post-avt me-3">
-                            <img src="https://tse3.mm.bing.net/th?id=OIP.ixZ69lPCOZ3ZO5UqSHQGIAHaHa&pid=Api&P=0&h=220" alt="anh dai dien" id="img" style="border-radius: 50%; width: 40px; height: 40px;" />
+                            <img src="https://phunuvietnam.mediacdn.vn/media/news/33abffcedac43a654ac7f501856bf700/anh-profile-tiet-lo-g-ve-ban-1.jpg" alt="anh dai dien" id="img" style="border-radius: 50%; width: 40px; height: 40px;" />
                         </div>
                         <div class="post-name">
-                            <p class="name-user">Ẩn danh</p>
+                            <p class="name-user">Người dùng ẩn danh</p>
                             <p class="hours-posted">@Math.Round(@gap_hour) h trước</p>
-                        </div>  
+                        </div>
                     </div>
                 }
                 else
@@ -47,71 +46,8 @@
                             <p class="hours-posted">@Math.Round(@gap_hour) h trước</p>
                         </div>
                     </div>
-
-                </div>
-                <i class="far fa-comment"></i>
-            </div>
-            <div>
-                <p style="margin-bottom: 0;"><span style="font-weight: 500; margin-bottom: 0;">999</span> lượt thích</p>
-                <p>...</p>
-            </div>
-            <div class="post-comment">
-                <div class="post-comment-avt me-3">
-                    <img src="https://tse3.mm.bing.net/th?id=OIP.ixZ69lPCOZ3ZO5UqSHQGIAHaHa&pid=Api&P=0&h=220" alt="anh dai dien" id="img" style="border-radius: 50%; width: 40px; height: 40px;" />
-                </div>
-                <div class="post-content-comment">
-
-                    <p class="name-post">Vân Thư</p>
-                    <p class="content">huhuasjdask;dkjdakd ạdkslajdkal</p>
-
-                </div>
-
-
-            </div>
-            <div class="input-add-comment">
-
-                <input placeholder="Thêm bình luận" class="input-field input_comment" type="text">
-                <label for="input-field" class="input-label">Bình luận</label>
-                <span class="input-highlight"></span>
-            </div>
-        </div><div class="post">
-            <div class="post-row1">
-                <div class="post-avt me-3">
-                    <img src="https://tse3.mm.bing.net/th?id=OIP.ixZ69lPCOZ3ZO5UqSHQGIAHaHa&pid=Api&P=0&h=220" alt="anh dai dien" id="img" style="border-radius: 50%; width: 40px; height: 40px;" />
-                </div>
-                <div class="post-name">
-                    <p class="name-user">Vân Thư</p>
-                    <p class="hours-posted">20 giờ trước</p>
-                </div>
-            </div>
-            <div class="content-post">
-                <p>
-                    Xin chào mọi người,
-                    Hôm nay, tôi muốn mở lòng và chia sẻ với các bạn về tình trạng trầm cảm mà tôi đang trải qua. Đôi khi, cuộc sống có thể trở nên khó khăn và cảm giác trầm cảm đã ập đến lấn át tâm trí của tôi.
-                    Trong những tháng qua, tôi đã phải đối mặt với cuộc chiến với trầm cảm. Cảm giác u ám và mệt mỏi vẫn luôn hiện diện trong cuộc sống hàng ngày của tôi. Đôi khi, nó khiến tôi cảm thấy như một cuộc đấu tranh không có hồi kết. Tôi cảm thấy mất đi sự hứng thú và niềm vui với những điều trước đây tôi thường thích. Cảm xúc này thật khó diễn tả và đôi khi tôi cảm thấy mình bị lạc trong một thế giới tối tăm. Các bạn có đang gặp tình trạng giống tôi không?
-                </p>
-            </div>
-            <div class="emotion">
-                <div class="con-like">
-                    <input class="like" type="checkbox" title="like">
-                    <div class="checkmark">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
-                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
-                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
-                            <polygon class="poly" points="10,10 20,20"></polygon>
-                            <polygon class="poly" points="10,50 20,50"></polygon>
-                            <polygon class="poly" points="20,80 30,70"></polygon>
-                            <polygon class="poly" points="90,10 80,20"></polygon>
-                            <polygon class="poly" points="90,50 80,50"></polygon>
-                            <polygon class="poly" points="80,80 70,70"></polygon>
-                        </svg>
-
                 }
- 
+
                 <div class="content-post">
                     <p>
                         @post.Content
@@ -136,7 +72,6 @@
                                 <polygon class="poly" points="80,80 70,70"></polygon>
                             </svg>
                         </div>
-
                     </div>
                     <i class="far fa-comment icon_comment" onclick="ShowComment(event, @post.Id)"></i>
                 </div>
@@ -144,21 +79,19 @@
                     <p style="margin-bottom: 0;"><span style="font-weight: 500; margin-bottom: 0;">@post.LikeCount</span> lượt thích</p>
                     <p>...</p>
                 </div>
-              
-                <div class="container-comment">
 
+                <div class="container-comment">
                 </div>
                 <div class="input-add-comment">
 
                     <input placeholder="Thêm bình luận" class="input-field input_comment" type="text">
                     @* <label for="input-field" class="input-label" >Bình luận</label> *@
-                    <button onclick ="CreateComment(event, @post.Id)">thêm bình luận</button>
+                    <button onclick="CreateComment(event, @post.Id)">thêm bình luận</button>
                     <span class="input-highlight"></span>
                 </div>
 
             </div>
-        } 
-
+        }
     </div>
 </div>
 
@@ -177,11 +110,10 @@
                     <span class="slider"></span>
                 </label>
             </div>
-          <div class=" avt-name-modal ">
+@*           <div class=" avt-name-modal ">
                 <img src="https://tse3.mm.bing.net/th?id=OIP.ixZ69lPCOZ3ZO5UqSHQGIAHaHa&pid=Api&P=0&h=220" alt="anh dai dien"   style="border-radius: 50%; width: 40px; height: 40px;" />
                 <p class="name-user mb-0">Vân Thư</p>
-            </div> *@
-
+            </div>  *@
 
 
             <textarea class="content-modal mt-3" placeholder="Bạn viết gì đi..." oninput="autoResize(this)"></textarea>
@@ -216,7 +148,7 @@
         if (input.value == "" || input.value == " ") {
             return;
         }   
-        window.location.href = `Comment/Create?idPost=${idPost}&idUser=${4}&content=${input.value}`;
+        window.location.href = `Comment/Create?idPost=${idPost}&content=${input.value}`;
         input.value = "";
 
 
@@ -230,7 +162,7 @@
             return;
         }
         console.log(IsAnonymousTag.checked);
-        window.location.href = `Post/Create?idUser=${4}&content=${content.value}&isAnonymous=${IsAnonymousTag.checked}`;
+        window.location.href = `Post/Create?content=${content.value}&isAnonymous=${IsAnonymousTag.checked}`;
         content.value = "";
     }
   

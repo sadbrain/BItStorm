@@ -1,17 +1,19 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 .heading {
-    color: rgb(30, 119, 228);
+    color: rgb(30, 119, 228) !important;
 }
 
 .input-group {
     width: 40%;
 }
-
+.input-group input{
+    padding: 10px;
+}
 .container_input {
     display: flex;
     justify-content: center;
@@ -33,3 +35,4 @@
     color: white;
     font-weight: bold;
 }
+

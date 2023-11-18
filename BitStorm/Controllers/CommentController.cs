@@ -22,23 +22,23 @@ public class CommentController : Controller
         }
         return PartialView("_GetComments",comments);
     }
-    public IActionResult Create(int? idPost, int? idUser, string content)
+    public IActionResult Create(int? idPost, string content)
     {
         //check user have login 
         //sai chuyển hướng đến form đăng nhập
 
         //đúng tạo comment
-        if (idPost == null || idUser == null)
+        if (idPost == null)
         {
 
             return BadRequest();
         }
-
-        else
+        if (Request.Cookies["UserId"] != null)
         {
+            int.TryParse(Request.Cookies["UserId"], out int userId);
             //cập nhật post
             var post = _unitOfWork.Post.Get(p => p.Id == idPost);
-            var user = _unitOfWork.User.Get(u => u.Id == idUser);
+            var user = _unitOfWork.User.Get(u => u.Id == userId);
 
             post.CommentCount += 1;
             _unitOfWork.Post.Update(post);
@@ -47,19 +47,26 @@ public class CommentController : Controller
             {
                 Content = content,
                 PostId = idPost.Value,
-                UserId = idUser.Value,
+                UserId = userId,
                 CreateAt = DateTime.Now,
                 Post = post,
                 User = user,
                 IsAnonymous = false
             };
-            if (post.UserId == idUser && post.IsAnonymous)
+            if (post.UserId == userId && post.IsAnonymous)
             {
                 comment.IsAnonymous = true;
             }
             _unitOfWork.Comment.Add(comment);
+            _unitOfWork.Save();
+            return RedirectToAction("Index", "Post");
         }
-        _unitOfWork.Save();
-        return RedirectToAction("Index", "Post");
+        else
+        {
+            return RedirectToAction("Login", "Account");
+
+        }
+
+
     }
 }

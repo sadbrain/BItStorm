@@ -16,7 +16,7 @@ public class User
     public int Id { get; set; }
     [Required]
     [MaxLength(30)]
-    [DisplayName("Category Name")]
+    [DisplayName("Name")]
     public string Name { get; set; }
     [Required]
     [EmailAddress]
